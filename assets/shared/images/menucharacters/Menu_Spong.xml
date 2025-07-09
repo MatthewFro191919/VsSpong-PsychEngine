@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="Menu_Spong.png">
+	<!-- Created using the Spritesheet and XML generator -->
+	<!-- https://uncertainprod.github.io/FNF-Spritesheet-XML-generator-Web -->
+	<SubTexture name="M Spong Idle0000" x="0" y="0" width="429" height="451" frameX="2" frameY="-314" frameWidth="429" frameHeight="767"/>
+</TextureAtlas>
