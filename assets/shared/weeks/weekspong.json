@@ -1,0 +1,24 @@
+{
+	"songs": [
+		["Spong", "spong", [255, 255, 79]],
+		["Absorb", "spong", [255, 255, 79]],
+		["Abrasive", "spong-spongebob", [255, 255, 79]],
+		["Pineappled", "pineapple", [255, 255, 79]]
+	],
+
+	"weekCharacters": [
+		"spong",
+		"bf",
+		"gf"
+	],
+	"weekBackground": "phillystreets",
+
+	"storyName": "Due Debts",
+	"weekBefore": "",
+	"weekName": "Weekend 1",
+	"startUnlocked": true,
+
+	"hideStoryMode": false,
+	"hideFreeplay": false,
+	"difficulties": "Easy, Normal, Hard"
+}
