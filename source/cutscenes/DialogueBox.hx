@@ -19,6 +19,7 @@ class DialogueBox extends FlxSpriteGroup
 	public var skipDialogueThing:Void->Void = null;
 
 	var portraitLeft:FlxSprite;
+	var portraitLeftSB:FlxSprite;
 	var portraitRight:FlxSprite;
 
 	var handSelect:FlxSprite;
@@ -29,6 +30,19 @@ class DialogueBox extends FlxSpriteGroup
 	public function new(talkingRight:Bool = true, ?dialogueList:Array<String>)
 	{
 		super();
+
+		switch (PlayState.SONG.song.toLowerCase())
+		{
+			case 'spong':
+				FlxG.sound.playMusic(Paths.music('SpongCutscene'), 0);
+				FlxG.sound.music.fadeIn(1, 0, 0.8);
+			case 'abrasive':
+				FlxG.sound.playMusic(Paths.music('SpongCutscene'), 0);
+				FlxG.sound.music.fadeIn(1, 0, 0.8);
+			case 'pineappled':
+				FlxG.sound.playMusic(Paths.music('SpongCOCKscene'), 0);
+				FlxG.sound.music.fadeIn(1, 0, 0.8);
+		}
 
 		bgFade = new FlxSprite(-200, -200).makeGraphic(Std.int(FlxG.width * 1.3), Std.int(FlxG.height * 1.3), 0xFFB3DFd8);
 		bgFade.scrollFactor.set();
@@ -63,6 +77,26 @@ class DialogueBox extends FlxSpriteGroup
 				var face:FlxSprite = new FlxSprite(320, 170).loadGraphic(Paths.image('weeb/spiritFaceForward'));
 				face.setGraphicSize(Std.int(face.width * 6));
 				add(face);
+			case 'spong':
+				hasDialog = true;
+				box.frames = Paths.getSparrowAtlas('dialogueBox-evil', 'shared');
+				box.animation.addByPrefix('normalOpen', 'Spirit Textbox spawn instance 1', 24, false);
+				box.animation.addByIndices('normal', 'Spirit Textbox spawn instance 1', [11], "", 24);
+					case 'abrasive':
+				hasDialog = true;
+				box.frames = Paths.getSparrowAtlas('dialogueBox-evil', 'shared');
+				box.animation.addByPrefix('normalOpen', 'Spirit Textbox spawn instance 1', 24, false);
+				box.animation.addByIndices('normal', 'Spirit Textbox spawn instance 1', [11], "", 24);
+			case 'absorb':
+				hasDialog = true;
+				box.frames = Paths.getSparrowAtlas('dialogueBox-evil', 'shared');
+				box.animation.addByPrefix('normalOpen', 'Spirit Textbox spawn instance 1', 24, false);
+				box.animation.addByIndices('normal', 'Spirit Textbox spawn instance 1', [11], "", 24);
+			case 'pineappled':
+				hasDialog = true;
+				box.frames = Paths.getSparrowAtlas('dialogueBox-evil', 'shared');
+				box.animation.addByPrefix('normalOpen', 'Spirit Textbox spawn instance 1', 24, false);
+				box.animation.addByIndices('normal', 'Spirit Textbox spawn instance 1', [11], "", 24);
 			default:
 				hasDialog = false;
 		}
@@ -240,8 +274,46 @@ class DialogueBox extends FlxSpriteGroup
 					if (songName == 'senpai') portraitLeft.visible = true;
 					portraitLeft.animation.play('enter');
 				}
-			case 'bf':
+			case 'spong':
+				portraitLeft = new FlxSprite(-20, 40);
+				portraitLeft.frames = Paths.getSparrowAtlas('spongPortrait', 'shared');
+				portraitLeft.animation.addByPrefix('enter', 'Senpai Portrait Enter instance 1', 24, false);
+				portraitLeft.setGraphicSize(Std.int(portraitLeft.width * PlayState.daPixelZoom * 0.9));
+				portraitLeft.updateHitbox();
+				portraitLeft.scrollFactor.set();
+				add(portraitLeft);
+				portraitRight.visible = false;
+				portraitLeftSB.visible = false;
+				if (!portraitLeft.visible)
+				{
+					portraitLeft.visible = true;
+					portraitLeft.animation.play('enter');
+				}
+			case 'spongebob':
+				portraitLeftSB = new FlxSprite(-20, 40);
+				portraitLeftSB.frames = Paths.getSparrowAtlas('spongebobPortrait', 'shared');
+				portraitLeftSB.animation.addByPrefix('enter', 'Senpai Portrait Enter instance 1', 24, false);
+				portraitLeftSB.setGraphicSize(Std.int(portraitLeftSB.width * PlayState.daPixelZoom * 0.9));
+				portraitLeftSB.updateHitbox();
+				portraitLeftSB.scrollFactor.set();
+				add(portraitLeftSB);
+				portraitRight.visible = false;
 				portraitLeft.visible = false;
+				if (!portraitLeftSB.visible)
+				{
+					portraitLeftSB.visible = true;
+					portraitLeftSB.animation.play('enter');
+				}
+			case 'bf':
+				portraitRight = new FlxSprite(0, 40);
+				portraitRight.frames = Paths.getSparrowAtlas('bfPortrait', 'shared');
+				portraitRight.animation.addByPrefix('enter', 'Boyfriend portrait enter instance 1', 24, false);
+				portraitRight.setGraphicSize(Std.int(portraitRight.width * PlayState.daPixelZoom * 0.9));
+				portraitRight.updateHitbox();
+				portraitRight.scrollFactor.set();
+				add(portraitRight);
+				portraitLeft.visible = false;
+				portraitLeftSB.visible = false;
 				if (!portraitRight.visible)
 				{
 					portraitRight.visible = true;
