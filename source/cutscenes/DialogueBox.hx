@@ -79,22 +79,22 @@ class DialogueBox extends FlxSpriteGroup
 				add(face);
 			case 'spong':
 				hasDialog = true;
-				box.frames = Paths.getSparrowAtlas('dialogueBox-evil', 'shared');
+				box.frames = Paths.getSparrowAtlas('spong/dialogueBox-evil', 'shared');
 				box.animation.addByPrefix('normalOpen', 'Spirit Textbox spawn instance 1', 24, false);
 				box.animation.addByIndices('normal', 'Spirit Textbox spawn instance 1', [11], "", 24);
 			case 'abrasive':
 				hasDialog = true;
-				box.frames = Paths.getSparrowAtlas('dialogueBox-evil', 'shared');
+				box.frames = Paths.getSparrowAtlas('spong/dialogueBox-evil', 'shared');
 				box.animation.addByPrefix('normalOpen', 'Spirit Textbox spawn instance 1', 24, false);
 				box.animation.addByIndices('normal', 'Spirit Textbox spawn instance 1', [11], "", 24);
 			case 'absorb':
 				hasDialog = true;
-				box.frames = Paths.getSparrowAtlas('dialogueBox-evil', 'shared');
+				box.frames = Paths.getSparrowAtlas('spong/dialogueBox-evil', 'shared');
 				box.animation.addByPrefix('normalOpen', 'Spirit Textbox spawn instance 1', 24, false);
 				box.animation.addByIndices('normal', 'Spirit Textbox spawn instance 1', [11], "", 24);
 			case 'pineappled':
 				hasDialog = true;
-				box.frames = Paths.getSparrowAtlas('dialogueBox-evil', 'shared');
+				box.frames = Paths.getSparrowAtlas('spong/dialogueBox-evil', 'shared');
 				box.animation.addByPrefix('normalOpen', 'Spirit Textbox spawn instance 1', 24, false);
 				box.animation.addByIndices('normal', 'Spirit Textbox spawn instance 1', [11], "", 24);
 			default:
