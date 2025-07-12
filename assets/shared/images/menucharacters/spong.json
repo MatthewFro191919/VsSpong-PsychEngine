@@ -1,12 +1,8 @@
 {
-	
-	"image": "Menu_Spong",
-	"position": [
-		15,
-		-40
-	],
-	"scale": 1,
-	"idle_anim": "M Spong Idle",
+	"antialiasing": true,
 	"confirm_anim": "M Spong Idle",
-	"antialiasing": true
+	"idle_anim": "M Spong Idle",
+	"position": [130, 290],
+	"scale": 0.7,
+	"image": "Menu_Spong"
 }
