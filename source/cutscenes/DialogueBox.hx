@@ -82,7 +82,7 @@ class DialogueBox extends FlxSpriteGroup
 				box.frames = Paths.getSparrowAtlas('dialogueBox-evil', 'shared');
 				box.animation.addByPrefix('normalOpen', 'Spirit Textbox spawn instance 1', 24, false);
 				box.animation.addByIndices('normal', 'Spirit Textbox spawn instance 1', [11], "", 24);
-					case 'abrasive':
+			case 'abrasive':
 				hasDialog = true;
 				box.frames = Paths.getSparrowAtlas('dialogueBox-evil', 'shared');
 				box.animation.addByPrefix('normalOpen', 'Spirit Textbox spawn instance 1', 24, false);
